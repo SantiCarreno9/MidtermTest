@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import AddLogo from "./components/addlogo.component";
+import AddPhoto from "./components/addphoto.component";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <Link class="navbar-brand" to="/">
+          Santiago Carreno Midterm
+        </Link>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <Link class="nav-link" to="/addLogo">
+              Upload Logo
+            </Link>
+          </li>
+          <li class="nav-item">
+            <Link class="nav-link" to="/addPhoto">
+            Upload Photo
+            </Link>
+          </li>          
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/addLogo" Component={AddLogo} />
+        <Route path="/addPhoto" Component={AddPhoto} />
+      </Routes>
+    </Router>
   );
 }
 

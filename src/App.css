@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.customInput {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: gray;
+  border-style: dotted;
+  width: 50%;
+  padding-bottom: 10px;
+}
+.customInput:focus {
+  border-color: black;  
+}
+
+.formButtonsContainer{
+  display: flex;
+  justify-content: baseline;
+}
+
